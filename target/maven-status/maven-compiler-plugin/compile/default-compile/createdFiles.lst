@@ -1,0 +1,16 @@
+com/practicas/model/Diagnostico.class
+com/practicas/controller/PacienteBean.class
+com/practicas/model/Usuario.class
+com/practicas/service/MedicoServiceImpl.class
+com/practicas/practicasApplication.class
+com/practicas/service/PacienteService.class
+com/practicas/repository/MedicoRepository.class
+com/practicas/model/Medico.class
+com/practicas/SpringConfigScan.class
+com/practicas/model/Paciente.class
+com/practicas/model/Cita.class
+com/practicas/model/HT_Usuario.class
+com/practicas/service/MedicoService.class
+com/practicas/service/PacienteServiceImpl.class
+com/practicas/practicasApplication$IndexController.class
+com/practicas/repository/PacienteRepository.class

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:cc="http://java.sun.com/jsf/composite">
+<h:head>
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1"
+	  http-equiv="X-UA-Conpatible" />
+	<title>Editar Paciente</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" 
+		integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" 
+		crossorigin="anonymous" />
+	</h:head>
+	<h:body style="margin: 15px">
+	 	<h2>
+			<h:outputText value="Editar Paciente"></h:outputText>
+		</h2>
+		<h:form>
+			<h:panelGrid class="col-xs-12 table" columns="2" cellspacing="20" border="1">
+				 
+				<h:outputText value="Nombre"></h:outputText>
+				<h:inputText class="col-xs-12" value="#{paciente.nombre}"></h:inputText>
+				 
+				<h:outputText value="Apellido 1"></h:outputText>
+				<h:inputText class="col-xs-12" value="#{paciente.apellido1}"></h:inputText>
+				
+				<h:outputText value="Apellido 2"></h:outputText>
+				<h:inputText class="col-xs-12" value="#{paciente.apellido2}"></h:inputText> 
+				
+				<h:outputText value="NIF"></h:outputText>
+				<h:inputText  class="col-xs-12" value="#{paciente.nif}"></h:inputText>
+				
+				<h:outputText value="F. Nacimiento"></h:outputText>
+				<h:inputText class="col-xs-12" value="#{paciente.fechaNacimiento}">
+					<f:convertDateTime pattern="dd/MM/yyyy"/>  
+				</h:inputText>
+				 
+				<h:outputText value="Telefono"></h:outputText>
+				<h:inputText class="col-xs-12" value="#{paciente.telefono}"></h:inputText>
+				 
+				<h:outputText value="Email"></h:outputText>
+				<h:inputText class="col-xs-12" value="#{paciente.email}"></h:inputText>
+				 
+			 	
+			</h:panelGrid>
+			<h:commandLink 
+					    action="#{pacienteBean.actualizar(paciente)}"
+					    styleClass="btn btn-primary">
+					    <i class="glyphicon glyphicon-floppy-save"></i> Guardar
+					</h:commandLink>
+		 
+		</h:form>
+	 
+	 	<script src="https://code.jquery.com/jquery-1.12.4.min.js" 
+		 	integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" 
+		 	crossorigin="anonymous">
+	 	</script>
+    	<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" 
+    		integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" 
+    		crossorigin="anonymous">
+    	</script>
+	</h:body>
+</html>

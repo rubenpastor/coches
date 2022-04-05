@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:cc="http://java.sun.com/jsf/composite">
+<h:head>
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1"
+	  http-equiv="X-UA-Conpatible" />
+		<title>Listado pacientes</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" 
+		integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" 
+		crossorigin="anonymous" />
+		<style>
+			.centrarContenido{
+			    text-align: center;
+			}
+		</style>
+	</h:head>
+	<h:body style="margin: 15px">
+		<h2>
+			<h:outputText value="Lista Pacientes"></h:outputText>
+		</h2>
+		<h:form>
+			<h:commandLink style="margin-bottom: 15px"
+					    action="#{pacienteBean.nuevo()}"
+					    styleClass="btn btn-primary">
+					    <i class="glyphicon glyphicon-plus"></i> Nuevo Paciente
+					</h:commandLink>
+			<div class="table-responsive">
+				<h:dataTable class="col-xs-12 table table-hover" value="#{pacienteBean.listaPacientes}" var="paciente" border="1"
+				rowClasses = "centrarContenido"
+				headerClass = "centrarContenido"
+				>
+					<h:column>
+						<f:facet name="header">Id</f:facet>
+						<h:outputText value="#{paciente.idPaciente}"></h:outputText>
+					</h:column>
+					<h:column>
+						<f:facet name="header">Nombre</f:facet>
+						<h:outputText value="#{paciente.nombre}"></h:outputText>
+					</h:column>
+					<h:column>
+						<f:facet name="header">Apellidos</f:facet>
+						<h:outputText value="#{paciente.apellido1} #{paciente.apellido2}"></h:outputText>
+					</h:column>
+					<h:column>
+						<f:facet name="header">NIF</f:facet>
+						<h:outputText value="#{paciente.nif}"></h:outputText>
+					</h:column>
+					<h:column>
+						<f:facet name="header">F. Nacimiento</f:facet>
+						<h:outputText value="#{paciente.fechaNacimiento}">
+							<f:convertDateTime type="date" pattern="dd/MM/yyyy"/>
+						</h:outputText>
+					</h:column>
+					<h:column>
+						<f:facet name="header">Email</f:facet>
+						<h:outputText value="#{paciente.email}"></h:outputText>
+					</h:column>
+					<h:column>
+						<f:facet name="header">Telefono</f:facet>
+						<h:outputText value="#{paciente.telefono}"></h:outputText>
+					</h:column>
+					<h:column>
+						<f:facet name="header">Usuario</f:facet>
+						<h:outputText value="#{paciente.usuario.codUsuario}"></h:outputText>
+					</h:column>
+					<h:column>
+						<f:facet name="header">Operaciones</f:facet>
+						<h:commandLink
+							style="margin-right: 5px"
+						    action="#{pacienteBean.editar(paciente.idPaciente)}"
+						    styleClass="btn btn-primary">
+						    <i class="glyphicon glyphicon-pencil"></i> Editar
+						</h:commandLink>
+						<h:commandLink
+						    action="#{pacienteBean.eliminar(paciente.idPaciente)}"
+						    styleClass="btn btn-danger">
+						    <i class="glyphicon glyphicon-remove"></i> Eliminar
+						</h:commandLink>
+					</h:column>
+				</h:dataTable>
+			</div>
+		</h:form>
+		<script src="https://code.jquery.com/jquery-1.12.4.min.js" 
+		 	integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" 
+		 	crossorigin="anonymous">
+	 	</script>
+    	<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" 
+    		integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" 
+    		crossorigin="anonymous">
+    	</script>
+	</h:body>
+</html>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ 
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+ 
+<ui:composition template="/templates/template.xhtml">
+	<ui:define name="title">
+		<h:outputText value="Inicio" />
+	</ui:define>
+	<ui:define name="content">
+		<c:if test="#{usuario == null}">
+			<h:form id="formulario">
+				<h:panelGroup class="col-xs-12 col-md-6 center-block">
+					<h2>Inicio de sesión</h2>
+					<h:panelGroup class="col-xs-12 col-sm-2">
+						<h:outputLabel  value="Usuario" for="username" />
+					</h:panelGroup>
+					<h:panelGroup class=" col-xs-12 col-sm-6 col-md-4" style="margin-bottom: 15px">
+						<h:inputText class="form-control" id="username" value="#{usuarioBean.codUsuarioLogin}"></h:inputText>
+						<h:message for="username"></h:message>
+					</h:panelGroup>
+					<h:panelGroup class="clearfix"></h:panelGroup>
+					<h:panelGroup class="col-xs-12 col-sm-2">
+						<h:outputLabel  value="Contraseña" for="password"/>
+					</h:panelGroup>
+					<h:panelGroup class=" col-xs-12 col-sm-6 col-md-4" style="margin-bottom: 15px">
+						<h:inputSecret class="form-control" id="password" value="#{usuarioBean.passwordLogin}"></h:inputSecret>
+						<h:message for="password"></h:message>
+					</h:panelGroup>
+					<h:panelGroup class="clearfix"></h:panelGroup>
+					<h:panelGroup class=" col-xs-12 col-sm-8 col-md-6" style="margin-bottom: 15px">
+						<h:commandButton style="margin-bottom: 15px"
+								    action="#{usuarioBean.acceder()}"
+								    value="Acceder"
+								    styleClass="btn btn-primary pull-right">
+								    
+								</h:commandButton>
+					</h:panelGroup>
+				</h:panelGroup>
+			</h:form>
+		</c:if>
+		<c:if test="#{usuario != null}">
+			<h2>¡Bienvenido!</h2>
+			<h3>#{paciente.nombre} #{paciente.apellido1} #{paciente.apellido2}</h3>
+			
+		</c:if>
+	</ui:define>
+ 
+</ui:composition>
+</html>

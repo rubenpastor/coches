@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ 
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+ 
+<ui:composition template="/templates/template.xhtml">
+	<ui:define name="title">
+		<h:outputText value="Médicos" />
+	</ui:define>
+	<ui:define name="content">
+		<h2>
+			<h:outputText value="Lista de médicos"></h:outputText>
+		</h2>
+		<h:form>
+			<div class="table-responsive">
+				<h:dataTable class="col-xs-12 table table-hover" value="#{medicoBean.listaMedicos}" var="medico" border="1"
+				rowClasses = "centrarContenido"
+				headerClass = "centrarContenido"
+				>
+					<h:column>
+						<f:facet name="header">Id</f:facet>
+						<h:outputText value="#{medico.idMedico}"></h:outputText>
+					</h:column>
+					<h:column>
+						<f:facet name="header">Nombre</f:facet>
+						<h:outputText value="#{medico.nombre}"></h:outputText>
+					</h:column>
+					<h:column>
+						<f:facet name="header">Apellidos</f:facet>
+						<h:outputText value="#{medico.apellido1} #{medico.apellido2}"></h:outputText>
+					</h:column>
+					<h:column>
+						<f:facet name="header">Email</f:facet>
+						<h:outputText value="#{medico.email}"></h:outputText>
+					</h:column>
+					<h:column>
+						<f:facet name="header">Especialidad</f:facet>
+						<h:outputText value="#{medico.especialidad}"></h:outputText>
+					</h:column>
+					<h:column>
+						<f:facet name="header">Num. colegiado</f:facet>
+						<h:outputText value="#{medico.numColegiado}"></h:outputText>
+					</h:column>
+					<h:column>
+						<f:facet name="header">Operaciones</f:facet>
+						<h:commandLink
+							style="margin-right: 5px"
+						    action="#{medicoBean.nuevaCita(medico.idMedico)}"
+						    styleClass="btn btn-primary">
+						    <i class="glyphicon glyphicon-plus"></i> Nueva cita
+						</h:commandLink>
+						<h:commandLink
+						    action="#{medicoBean.verCitas(medico.idMedico, usuario.paciente.idPaciente)}"
+						    styleClass="btn btn-danger">
+						    <i class="glyphicon glyphicon-search"></i> Ver mis citas
+						</h:commandLink>
+					</h:column>
+				</h:dataTable>
+			</div>
+		</h:form>
+	</ui:define>
+ 
+</ui:composition>
+</html>

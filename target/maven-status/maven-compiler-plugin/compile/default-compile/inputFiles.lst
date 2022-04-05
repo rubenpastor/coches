@@ -1,0 +1,16 @@
+/Users/rubenpastor/eclipse-workspace/practicas/src/main/java/com/practicas/controller/MenuBean.java
+/Users/rubenpastor/eclipse-workspace/practicas/src/main/java/com/practicas/model/Usuario.java
+/Users/rubenpastor/eclipse-workspace/practicas/src/main/java/com/practicas/service/PacienteService.java
+/Users/rubenpastor/eclipse-workspace/practicas/src/main/java/com/practicas/model/Paciente.java
+/Users/rubenpastor/eclipse-workspace/practicas/src/main/java/com/practicas/model/HT_Usuario.java
+/Users/rubenpastor/eclipse-workspace/practicas/src/main/java/com/practicas/model/Diagnostico.java
+/Users/rubenpastor/eclipse-workspace/practicas/src/main/java/com/practicas/model/Medico.java
+/Users/rubenpastor/eclipse-workspace/practicas/src/main/java/com/practicas/service/PacienteServiceImpl.java
+/Users/rubenpastor/eclipse-workspace/practicas/src/main/java/com/practicas/SpringConfigScan.java
+/Users/rubenpastor/eclipse-workspace/practicas/src/main/java/com/practicas/repository/MedicoRepository.java
+/Users/rubenpastor/eclipse-workspace/practicas/src/main/java/com/practicas/model/Cita.java
+/Users/rubenpastor/eclipse-workspace/practicas/src/main/java/com/practicas/service/MedicoService.java
+/Users/rubenpastor/eclipse-workspace/practicas/src/main/java/com/practicas/repository/PacienteRepository.java
+/Users/rubenpastor/eclipse-workspace/practicas/src/main/java/com/practicas/controller/PacienteBean.java
+/Users/rubenpastor/eclipse-workspace/practicas/src/main/java/com/practicas/practicasApplication.java
+/Users/rubenpastor/eclipse-workspace/practicas/src/main/java/com/practicas/service/MedicoServiceImpl.java

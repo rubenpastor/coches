@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ 
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+ 
+<ui:composition template="/templates/template.xhtml">
+	<ui:define name="title">
+		<h:outputText value="Próximas citas" />
+	</ui:define>
+	<ui:define name="content">
+		<h2>
+			<h:outputText value="Próximas citas"></h:outputText>
+		</h2>
+		<h:form>
+			<div class="table-responsive">
+				<h:dataTable class="col-xs-12 table table-hover" value="#{historialCitasBean.listaCitasProximas}" var="cita" border="1"
+				rowClasses = "centrarContenido"
+				headerClass = "centrarContenido"
+				>
+					<h:column>
+						<f:facet name="header">Fecha</f:facet>
+						<h:outputText value="#{cita.fecha}">
+							<f:convertDateTime type="date" pattern="dd/MM/yyyy hh:mm"/>
+						</h:outputText>
+					</h:column>
+					<h:column>
+						<f:facet name="header">Código</f:facet>
+						<h:outputText value="#{cita.codigoCita}"></h:outputText>
+					</h:column>
+					<h:column>
+						<f:facet name="header">Medico</f:facet>
+						<h:outputText value="#{cita.medico.nombre} #{cita.medico.apellido1} #{cita.medico.apellido2}"></h:outputText>
+					</h:column>
+					<h:column>
+						<f:facet name="header">Especialidad</f:facet>
+						<h:outputText value="#{cita.medico.especialidad}"></h:outputText>
+					</h:column>
+					<h:column>
+						<f:facet name="header">Operaciones</f:facet>
+							<h:commandLink
+								rendered="#{cita.diagnostico != null}"
+							    action="#{historialCitasBean.verDiagnostico(cita.diagnostico)}"
+							    styleClass="btn btn-primary">
+							    <i class="glyphicon glyphicon-search"></i> Ver diagnóstico
+							</h:commandLink>
+					</h:column>
+				</h:dataTable>
+			</div>
+		</h:form>
+	</ui:define>
+ 
+</ui:composition>
+</html>
